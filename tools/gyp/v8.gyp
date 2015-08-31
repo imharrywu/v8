@@ -1361,11 +1361,11 @@
           'variables': {
             'gyp_generators': '<!(echo $GYP_GENERATORS)',
           },
-          'msvs_disabled_warnings': [4351, 4355, 4800],
+          'msvs_disabled_warnings': [4351, 4355, 4800, 4819],
           # When building Official, the .lib is too large and exceeds the 2G
           # limit. This breaks it into multiple pieces to avoid the limit.
           # See http://crbug.com/485155.
-          'msvs_shard': 4,
+          # 'msvs_shard': 4,
         }],
         ['component=="shared_library"', {
           'defines': [
@@ -1665,7 +1665,7 @@
                 '../../src/base/platform/platform-win32.cc',
                 '../../src/base/win32-headers.h',
               ],
-              'msvs_disabled_warnings': [4351, 4355, 4800],
+              'msvs_disabled_warnings': [4351, 4355, 4800, 4819],
               'link_settings':  {
                 'libraries': [ '-lwinmm.lib', '-lws2_32.lib' ],
               },
